@@ -1,0 +1,73 @@
+<nav class="navbar navbar-toggleable-sm navbar-light bg-primary mb-3">
+{{!--     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button> --}}
+    <a class="navbar-brand" href="/">testApp</a>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">about</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                   ideas
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="/ideas">all ideas</a>
+                    <a class="dropdown-item" href="/ideas/add">add ideas</a>
+                    
+                </div>
+            </li>
+        </ul>
+        
+    </div>
+    <div class="collapse navbar-collapse pull-right " style="margin-left:60%" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+           {{#if user}}
+ 
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       {{user.name}} 
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="users/logout">logout</a>
+    {{!--     <a class="dropdown-item" href="#">add ideas</a>
+ --}}
+    </div>
+</li>
+            {{else}}
+            <li class="nav-item ">
+                <a class="nav-link" href="/users/login">login
+                {{!--     <span class="sr-only">(current)</span>
+                 --}}</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="/users/register">register
+                   {{!--  <span class="sr-only">(current)</span> --}}
+                </a>
+            </li>
+            {{/if}}
+{{!--             <li class="nav-item">
+                <a class="nav-link" href="about">about</a>
+            </li> --}}
+  {{!--           <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    ideas
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="ideas/add">all ideas</a>
+                    <a class="dropdown-item" href="#">add ideas</a>
+    
+                </div>
+            </li> --}}
+        </ul>
+    
+    </div>
+</nav>
